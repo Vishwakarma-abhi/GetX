@@ -14,11 +14,27 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Practise App'),
+          title: Text('GetX Practise App'),
         ),
         body: Center(
           child: Column(
+
             children: [
+              SizedBox(
+                height: 50,
+              ),
+              
+              Text('GetX ',
+                style: TextStyle(
+                  fontSize: 70
+                      ,color: Colors.purple,
+                  fontWeight: FontWeight.bold
+                ),
+
+              ),
+              SizedBox(
+                height: 20,
+              ),
               //Snackbar
               ElevatedButton(
                   onPressed: () {
@@ -26,7 +42,7 @@ class MyApp extends StatelessWidget {
                         titleText: Text('Abhijeet'),
                         messageText: Text('Hi I am Abhijeet'),
                         // snackPosition: SnackPosition.BOTTOM,
-                        backgroundColor: Colors.blue,
+                        // backgroundColor: Colors.blue,
                         colorText: Colors.black,
                         borderColor: Colors.black,
                         // backgroundGradient:
@@ -35,6 +51,7 @@ class MyApp extends StatelessWidget {
                         borderWidth: 1);
                   },
                   child: Text('Show Snackbar')),
+
 
               //Dialog Box
               ElevatedButton(
@@ -45,11 +62,38 @@ class MyApp extends StatelessWidget {
                       // textConfirm: "confirm",
                       // radius: 80,
 
-                      title: 'Dialog Title',
-                      middleText: 'My First Dialog box',
+                      title: 'My Dialog Box',
+                      middleText: 'Hey Its Flutter',
                     );
                   },
-                  child: Text('Show Dialog'))
+                  child: Text('Show Dialog')),
+
+              //Bottom Sheet
+              ElevatedButton(
+                  onPressed: () {
+                    Get.bottomSheet(Container(
+                      child: Wrap(
+                        children: [
+                          ListTile(
+                            leading: Icon(Icons.wb_sunny_outlined),
+                            title: Text('Light Theme'),
+                            onTap: () {
+
+                              Get.changeTheme(ThemeData.light());
+                            },
+                          ),
+                          ListTile(
+                            leading: Icon(Icons.wb_sunny),
+                            title: Text('Dark Theme'),
+                            onTap: () {
+                              Get.changeTheme(ThemeData.dark());
+                            },
+                          ),
+                        ],
+                      ),
+                    ));
+                  },
+                  child: Text('Bottom Sheet'))
             ],
           ),
         ),
