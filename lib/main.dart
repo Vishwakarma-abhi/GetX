@@ -71,6 +71,7 @@ class MyApp extends StatelessWidget {
               //Bottom Sheet
               ElevatedButton(
                   onPressed: () {
+                    //using bottom sheet
                     Get.bottomSheet(Container(
                       child: Wrap(
                         children: [
