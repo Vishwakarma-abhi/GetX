@@ -1,4 +1,4 @@
-# practise
+# GetX repo. for learning
 
 A new Flutter project.
 
