@@ -20,7 +20,7 @@ class DataController extends GetxController {
     //since we need to fetch the data or we want the data so we have " get " request
 
     try {
-      isDataLoading = true as RxBool;
+      isDataLoading(true);
       http.Response response = await http.get(
           Uri.tryParse('https://dummyapi.io/data/v1/user')!,
           headers: {'app-id': '63a5cb5110d477466fb9b186'});
@@ -37,7 +37,7 @@ class DataController extends GetxController {
     } catch (e) {
       print("Error while loading");
     } finally {
-      isDataLoading = false as RxBool;
+      isDataLoading(false);
     }
   }
 }
