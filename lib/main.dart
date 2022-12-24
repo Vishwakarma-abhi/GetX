@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:practise/Apis/api_testing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,19 +19,17 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Column(
-
             children: [
               SizedBox(
                 height: 50,
               ),
-              
-              Text('GetX ',
-                style: TextStyle(
-                  fontSize: 70
-                      ,color: Colors.purple,
-                  fontWeight: FontWeight.bold
-                ),
 
+              Text(
+                'GetX ',
+                style: TextStyle(
+                    fontSize: 70,
+                    color: Colors.purple,
+                    fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 20,
@@ -51,7 +50,6 @@ class MyApp extends StatelessWidget {
                         borderWidth: 1);
                   },
                   child: Text('Show Snackbar')),
-
 
               //Dialog Box
               ElevatedButton(
@@ -79,7 +77,6 @@ class MyApp extends StatelessWidget {
                             leading: Icon(Icons.wb_sunny_outlined),
                             title: Text('Light Theme'),
                             onTap: () {
-
                               Get.changeTheme(ThemeData.light());
                             },
                           ),
@@ -94,7 +91,12 @@ class MyApp extends StatelessWidget {
                       ),
                     ));
                   },
-                  child: Text('Bottom Sheet'))
+                  child: Text('Bottom Sheet')),
+
+              //API Screen
+              ElevatedButton(
+                  onPressed: () => Get.to(const api_testing()),
+                  child: Text('APIs'))
             ],
           ),
         ),
